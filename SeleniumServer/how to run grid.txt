@@ -1,0 +1,32 @@
+
+Download SeleniumServer/Grid jar file from seleniumhq (grid jar shoud match with the selenium webdriver version)
+
+-----------How to create a Hub-----------------------
+
+Open a new console and go to selenium server jar path, type java space -jar and press the Tab button it will identify the
+jar like bellow and in the same line type space -role hub
+
+java -jar selenium-server-standalone-3.141.59.jar -role hub
+
+now it will generate the url:http://192.168.137.1:4444 
+
+Copy the URL and paste it in the browser it will open the grid
+
+now select console in grid broser
+
+it will go to nodes page
+
+-----------How to create a Node-----------------------
+
+
+Now Open a new console go to selenium server jar path and type java -Dwebdriver.chrome.driver="enter Web driver Path" type -jar and press the Tab button 
+it will identify the jar and type -role node -hub (copy the url from grid server console and paste it http://192.168.137.1:4444/grid/register)
+
+
+java -Dwebdriver.chrome.driver="D:\Softwares\Selenium\chromedriver.exe" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://192.168.137.1:4444/grid/register
+
+now the NOde is registered in grid now refresh the browser it will show the created node and aloso we can check in grid console.
+
+Note: Dont close Hub and Node Console
+
+Now write a Selenium script to check
